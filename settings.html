@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Settings — CivicPulse">
+    <title>Settings — CivicPulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMTBiOTgxIiBkPSJNMjU2IDUxMkEyNTYgMjU2IDAgMSAwIDI1NiAwYTI1NiAyNTYgMCAxIDAgMCA1MTJ6bTAtMzgyVjI1NnY3Ni41YzAgOS44LTcuOSAxNy41LTE3LjUgMTcuNUMyMjguOCAzNTAgMjIwLjkgMzQyLjIgMjIwLjkgMzMyLjVWMTI5LjhjMC05LjggNy45LTE3LjUgMTcuNS0xNy41czE3LjUgNy43IDE3LjUgMTcuN1oiLz48L3N2Zz4=">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header id="navbar"></header>
+    <main class="main-content page-content">
+        <div class="container">
+            <div class="settings-container" id="settingsContent">
+                <div class="page-header">
+                    <h1 class="page-header__title">Settings</h1>
+                    <p class="page-header__subtitle">Customize your CivicPulse experience</p>
+                </div>
+
+                <!-- Appearance -->
+                <div class="settings-section">
+                    <h2 class="settings-section__title"><i class="fa-solid fa-palette" style="color:var(--text-tertiary);margin-right:var(--space-2);"></i> Appearance</h2>
+                    <div class="settings-row">
+                        <div class="settings-row__info">
+                            <div class="settings-row__label">Dark Mode</div>
+                            <div class="settings-row__desc">Switch between light and dark themes</div>
+                        </div>
+                        <div class="settings-row__action">
+                            <label class="toggle-switch" id="themeSwitch">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="toggle-switch__slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile -->
+                <div class="settings-section">
+                    <h2 class="settings-section__title"><i class="fa-solid fa-user" style="color:var(--text-tertiary);margin-right:var(--space-2);"></i> Profile</h2>
+                    <div class="settings-row">
+                        <div class="settings-row__info">
+                            <div class="settings-row__label">Display Name</div>
+                            <div class="settings-row__desc">Your name shown across the platform</div>
+                        </div>
+                        <div class="settings-row__action">
+                            <div style="display:flex;gap:var(--space-2);">
+                                <input type="text" id="displayNameInput" class="form-input" style="width:160px;padding:var(--space-2) var(--space-3);font-size:var(--text-sm);" maxlength="50">
+                                <button class="btn btn--sm btn--primary" id="saveNameBtn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Access -->
+                <div class="settings-section">
+                    <h2 class="settings-section__title"><i class="fa-solid fa-shield-halved" style="color:var(--text-tertiary);margin-right:var(--space-2);"></i> Admin Access</h2>
+                    <div class="settings-row">
+                        <div class="settings-row__info">
+                            <div class="settings-row__label">Admin Mode</div>
+                            <div class="settings-row__desc" id="adminDesc">Enter admin code to enable moderation features</div>
+                        </div>
+                        <div class="settings-row__action" id="adminAction">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Management -->
+                <div class="settings-section">
+                    <h2 class="settings-section__title"><i class="fa-solid fa-database" style="color:var(--text-tertiary);margin-right:var(--space-2);"></i> Data Management</h2>
+                    <div class="settings-row">
+                        <div class="settings-row__info">
+                            <div class="settings-row__label">Storage Used</div>
+                            <div class="settings-row__desc" id="storageInfo">Calculating...</div>
+                        </div>
+                    </div>
+                    <div class="settings-row">
+                        <div class="settings-row__info">
+                            <div class="settings-row__label">Clear My Reports</div>
+                            <div class="settings-row__desc">Remove all reports you've submitted (demo data will remain)</div>
+                        </div>
+                        <div class="settings-row__action">
+                            <button class="btn btn--sm btn--danger" id="clearMyReportsBtn">Clear</button>
+                        </div>
+                    </div>
+                    <div class="settings-row">
+                        <div class="settings-row__info">
+                            <div class="settings-row__label">Reset All Data</div>
+                            <div class="settings-row__desc">Delete all data including demo reports. This cannot be undone.</div>
+                        </div>
+                        <div class="settings-row__action">
+                            <button class="btn btn--sm btn--danger" id="resetAllBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="settings-section">
+                    <h2 class="settings-section__title"><i class="fa-solid fa-circle-info" style="color:var(--text-tertiary);margin-right:var(--space-2);"></i> About</h2>
+                    <div class="settings-row">
+                        <div class="settings-row__info">
+                            <div class="settings-row__label">CivicPulse</div>
+                            <div class="settings-row__desc">Community-driven civic issue reporting platform. Built with HTML, CSS, and Vanilla JavaScript.</div>
+                        </div>
+                        <div class="settings-row__action">
+                            <span class="badge badge--category">v1.0.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/utils.js"></script>
+    <script src="js/storageAdapter.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/seedData.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    /* ============================================
+       Settings Page Inline Controller
+       ============================================ */
+    (function() {
+        'use strict';
+
+        function init() {
+            setupThemeToggle();
+            setupDisplayName();
+            setupAdminToggle();
+            setupDataManagement();
+            updateStorageInfo();
+        }
+
+        function setupThemeToggle() {
+            const toggle = document.getElementById('darkModeToggle');
+            if (!toggle) return;
+            toggle.checked = ThemeManager.getTheme() === 'dark';
+            toggle.addEventListener('change', () => {
+                ThemeManager.toggle();
+            });
+        }
+
+        function setupDisplayName() {
+            const input = document.getElementById('displayNameInput');
+            const btn = document.getElementById('saveNameBtn');
+            if (!input || !btn) return;
+
+            input.value = Auth.getDisplayName();
+
+            btn.addEventListener('click', () => {
+                const result = Auth.setDisplayName(input.value);
+                if (result.success) {
+                    Components.showToast(result.message, 'success');
+                } else {
+                    Components.showToast(result.message, 'error');
+                }
+            });
+        }
+
+        function setupAdminToggle() {
+            renderAdminState();
+        }
+
+        function renderAdminState() {
+            const action = document.getElementById('adminAction');
+            const desc = document.getElementById('adminDesc');
+            if (!action) return;
+
+            if (Auth.isAdmin()) {
+                desc.textContent = 'You have admin access. You can manage reports from the Admin Dashboard.';
+                action.innerHTML = `
+                    <button class="btn btn--sm btn--secondary" id="disableAdminBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i> Disable Admin
+                    </button>
+                `;
+                document.getElementById('disableAdminBtn').addEventListener('click', () => {
+                    Auth.toggleAdmin('');
+                    Components.showToast('Switched to citizen mode', 'info');
+                    renderAdminState();
+                    Components.renderNavbar(); // Refresh nav to show/hide admin link
+                });
+            } else {
+                desc.textContent = 'Enter admin code to enable moderation features';
+                action.innerHTML = `
+                    <div class="admin-code-input">
+                        <input type="password" id="adminCodeInput" placeholder="Admin code" autocomplete="off">
+                        <button class="btn btn--sm btn--primary" id="enableAdminBtn">Enable</button>
+                    </div>
+                `;
+                document.getElementById('enableAdminBtn').addEventListener('click', () => {
+                    const code = document.getElementById('adminCodeInput').value;
+                    const result = Auth.toggleAdmin(code);
+                    if (result.success) {
+                        Components.showToast(result.message, 'success');
+                        renderAdminState();
+                        Components.renderNavbar();
+                        Router.highlightActiveNav();
+                    } else {
+                        Components.showToast(result.message, 'error');
+                    }
+                });
+
+                document.getElementById('adminCodeInput').addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        document.getElementById('enableAdminBtn').click();
+                    }
+                });
+            }
+        }
+
+        function setupDataManagement() {
+            const clearMyBtn = document.getElementById('clearMyReportsBtn');
+            const resetAllBtn = document.getElementById('resetAllBtn');
+
+            if (clearMyBtn) {
+                clearMyBtn.addEventListener('click', () => {
+                    const modal = Components.showModal({
+                        title: 'Clear My Reports',
+                        body: '<p style="color:var(--text-secondary);">This will remove all reports you\'ve submitted. Demo data will not be affected. This action cannot be undone.</p>',
+                        footer: `
+                            <button class="btn btn--secondary" id="cancelClearBtn">Cancel</button>
+                            <button class="btn btn--danger" id="confirmClearBtn">Clear My Reports</button>
+                        `
+                    });
+
+                    document.getElementById('cancelClearBtn').addEventListener('click', modal.close);
+                    document.getElementById('confirmClearBtn').addEventListener('click', () => {
+                        DataService.clearUserReports();
+                        modal.close();
+                        Components.showToast('Your reports have been cleared.', 'success');
+                        updateStorageInfo();
+                    });
+                });
+            }
+
+            if (resetAllBtn) {
+                resetAllBtn.addEventListener('click', () => {
+                    const modal = Components.showModal({
+                        title: 'Reset All Data',
+                        body: '<p style="color:var(--text-secondary);">This will delete ALL data including demo reports, your profile, and all settings. The page will reload after reset. This cannot be undone.</p>',
+                        footer: `
+                            <button class="btn btn--secondary" id="cancelResetBtn">Cancel</button>
+                            <button class="btn btn--danger" id="confirmResetBtn">Reset Everything</button>
+                        `
+                    });
+
+                    document.getElementById('cancelResetBtn').addEventListener('click', modal.close);
+                    document.getElementById('confirmResetBtn').addEventListener('click', () => {
+                        DataService.clearAllData();
+                        modal.close();
+                        Components.showToast('All data has been reset. Reloading...', 'info');
+                        setTimeout(() => window.location.reload(), 1000);
+                    });
+                });
+            }
+        }
+
+        function updateStorageInfo() {
+            const info = document.getElementById('storageInfo');
+            if (!info) return;
+            const bytes = StorageAdapter.getStorageSize();
+            const kb = (bytes / 1024).toFixed(1);
+            info.textContent = `${kb} KB used in localStorage`;
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            setTimeout(init, 10);
+        }
+    })();
+    </script>
+</body>
+</html>
+

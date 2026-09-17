@@ -1,0 +1,378 @@
+/* ============================================
+   CivicPulse — Reports & Report Detail Styles
+   ============================================ */
+
+/* ── Reports List Page ── */
+.reports-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.reports-toolbar__top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.reports-toolbar__search {
+    flex: 1;
+}
+
+.reports-toolbar__sort {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+.reports-toolbar__sort-label {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.reports-toolbar__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.reports-results-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.reports-results-info__count {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.reports-results-info__count strong {
+    color: var(--text-primary);
+}
+
+.reports-results-info__active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-5);
+}
+
+/* ── Report Card Enhancements ── */
+.report-card__description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-normal);
+    margin-bottom: var(--space-3);
+}
+
+.report-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+.report-card__meta span {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.report-card__confirmations {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+}
+
+.report-card__confirmations i {
+    color: var(--color-accent);
+}
+
+/* ── Report Form Page ── */
+.report-form-container {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.report-form {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+}
+
+.report-form__title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+}
+
+.report-form__subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-8);
+}
+
+.report-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+}
+
+.report-form__divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: var(--space-6) 0;
+}
+
+.report-form__submit {
+    margin-top: var(--space-6);
+}
+
+.report-form__privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+.report-form__privacy i {
+    color: var(--color-accent);
+    margin-top: 2px;
+}
+
+/* ── Submit Success State ── */
+.report-success {
+    text-align: center;
+    padding: var(--space-10);
+    animation: fadeInScale 0.4s ease;
+}
+
+.report-success__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--color-success-bg);
+    color: var(--color-success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-3xl);
+    margin: 0 auto var(--space-5);
+}
+
+.report-success__title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+}
+
+.report-success__message {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-5);
+}
+
+.report-success__id {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: var(--text-md);
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.report-success__status {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+}
+
+.report-success__actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+/* ── Report Detail Page ── */
+.report-detail {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.report-detail__header {
+    margin-bottom: var(--space-6);
+}
+
+.report-detail__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    margin-bottom: var(--space-4);
+    transition: color var(--transition-fast);
+}
+
+.report-detail__back:hover {
+    color: var(--color-accent);
+}
+
+.report-detail__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.report-detail__title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+}
+
+.report-detail__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.report-detail__meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.report-detail__meta-item i {
+    color: var(--text-tertiary);
+}
+
+.report-detail__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.report-detail__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.report-detail__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.report-detail__section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+}
+
+.report-detail__section-title {
+    font-size: var(--text-md);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.report-detail__section-title i {
+    color: var(--text-tertiary);
+}
+
+.report-detail__description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-normal);
+    white-space: pre-wrap;
+    margin-bottom: 0;
+}
+
+.report-detail__image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-top: var(--space-4);
+}
+
+.report-detail__image img {
+    width: 100%;
+    border-radius: var(--radius-md);
+}
+
+.report-detail__confirmation {
+    text-align: center;
+    padding: var(--space-5);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+}
+
+.report-detail__confirmation-count {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.report-detail__confirmation-count strong {
+    font-size: var(--text-2xl);
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: var(--space-1);
+}
+
+/* ── Duplicate Warning ── */
+.duplicate-warning {
+    margin-bottom: var(--space-5);
+}
+
+.duplicate-warning__report {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-3);
+}
+
+.duplicate-warning__report-title {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--text-primary);
+}
+
+.duplicate-warning__report-meta {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}

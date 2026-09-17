@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse and discover civic issues reported by the community — CivicPulse">
+    <title>Community Issues — CivicPulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/reports.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMTBiOTgxIiBkPSJNMjU2IDUxMkEyNTYgMjU2IDAgMSAwIDI1NiAwYTI1NiAyNTYgMCAxIDAgMCA1MTJ6bTAtMzgyVjI1NnY3Ni41YzAgOS44LTcuOSAxNy41LTE3LjUgMTcuNUMyMjguOCAzNTAgMjIwLjkgMzQyLjIgMjIwLjkgMzMyLjVWMTI5LjhjMC05LjggNy45LTE3LjUgMTcuNS0xNy41czE3LjUgNy43IDE3LjUgMTcuN1oiLz48L3N2Zz4=">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header id="navbar"></header>
+    <main class="main-content page-content">
+        <div class="container">
+            <div class="page-header">
+                <div class="page-header__row">
+                    <div>
+                        <h1 class="page-header__title">Community Issues</h1>
+                        <p class="page-header__subtitle">Browse, search, and discover civic issues reported by your community</p>
+                    </div>
+                    <div class="page-header__actions">
+                        <a href="report-new.html" class="btn btn--primary">
+                            <i class="fa-solid fa-circle-plus"></i> Report Issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="reports-toolbar" id="reportsToolbar">
+                <div class="reports-toolbar__top">
+                    <div class="reports-toolbar__search">
+                        <div class="search-bar">
+                            <i class="fa-solid fa-magnifying-glass search-bar__icon"></i>
+                            <input type="text" class="search-bar__input" id="searchInput" placeholder="Search by issue, location, or keyword...">
+                            <button class="search-bar__clear" id="searchClear" aria-label="Clear search">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="reports-toolbar__sort">
+                        <span class="reports-toolbar__sort-label">Sort</span>
+                        <select class="filter-select" id="sortSelect">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="most-confirmed">Most Confirmed</option>
+                            <option value="highest-severity">Highest Severity</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="reports-toolbar__filters">
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="filterCategory">Category</label>
+                        <select class="filter-select" id="filterCategory">
+                            <option value="all">All Categories</option>
+                            ${CivicUtils.CATEGORIES.map(c =>
+                                `<option value="${c.id}">${c.label}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="filterArea">Area</label>
+                        <select class="filter-select" id="filterArea">
+                            <option value="all">All Areas</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="filterSeverity">Severity</label>
+                        <select class="filter-select" id="filterSeverity">
+                            <option value="all">All Severities</option>
+                            ${CivicUtils.SEVERITY_LEVELS.map(s =>
+                                `<option value="${s.id}">${s.label}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="filterStatus">Status</label>
+                        <select class="filter-select" id="filterStatus">
+                            <option value="all">All Statuses</option>
+                            ${CivicUtils.STATUSES.map(s =>
+                                `<option value="${s.id}">${s.label}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                    <button class="filter-clear hidden" id="clearFilters">
+                        <i class="fa-solid fa-xmark"></i> Clear filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Info -->
+            <div class="reports-results-info" id="resultsInfo"></div>
+
+            <!-- Results Grid -->
+            <div class="reports-grid" id="reportsGrid"></div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/utils.js"></script>
+    <script src="js/storageAdapter.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/seedData.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/reportsList.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CivicPulse — Report, track, and improve civic issues in your community. Turn everyday problems into visible, actionable community data.">
+    <title>CivicPulse — Report. Track. Improve Your Community.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMTBiOTgxIiBkPSJNMjU2IDUxMkEyNTYgMjU2IDAgMSAwIDI1NiAwYTI1NiAyNTYgMCAxIDAgMCA1MTJ6bTAtMzgyVjI1NnY3Ni41YzAgOS44LTcuOSAxNy41LTE3LjUgMTcuNUMyMjguOCAzNTAgMjIwLjkgMzQyLjIgMjIwLjkgMzMyLjVWMTI5LjhjMC05LjggNy45LTE3LjUgMTcuNS0xNy41czE3LjUgNy43IDE3LjUgMTcuN1oiLz48L3N2Zz4=">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="navbar"></header>
+
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero" id="heroSection">
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <i class="fa-solid fa-tower-broadcast"></i>
+                        Smart Civic Intelligence Platform
+                    </div>
+                    <h1 class="hero__title">
+                        Voice Your Concerns.<br>
+                        <span class="hero__title-accent">Build a Better City.</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Join thousands of citizens using smart data to hold local authorities 
+                        accountable and transform neighborhoods from the ground up.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="report-new.html" class="btn btn--primary btn--xl">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            Report an Issue
+                        </a>
+                        <a href="reports.html" class="btn btn--secondary btn--xl">
+                            <i class="fa-solid fa-compass"></i>
+                            Explore Community Issues
+                        </a>
+                    </div>
+                    <div class="hero__stats" id="heroStats">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works reveal">
+            <div class="container">
+                <div class="landing-section-header">
+                    <h2>How CivicPulse Works</h2>
+                    <p>Four simple steps to turn problems into progress</p>
+                </div>
+                <div class="how-it-works__grid reveal-stagger">
+                    <div class="how-step">
+                        <div class="how-step__icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="how-step__title">Report</h3>
+                        <p class="how-step__desc">Spotted a broken road, a leaking pipe, or a safety hazard? File a detailed report in under a minute.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step__icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="how-step__title">Confirm</h3>
+                        <p class="how-step__desc">Facing the same problem? One click to back the report and amplify your neighborhood's voice.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step__icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="how-step__title">Track</h3>
+                        <p class="how-step__desc">Watch every report move through its lifecycle — from submitted to verified to resolved.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step__icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="how-step__title">Resolve</h3>
+                        <p class="how-step__desc">Community-backed data demands action. Celebrate real, measurable improvements in your area.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories-section reveal">
+            <div class="container">
+                <div class="landing-section-header">
+                    <h2>What Can You Report?</h2>
+                    <p>From potholes to pollution — every civic issue has a category</p>
+                </div>
+                <div class="categories-grid reveal-stagger" id="categoriesGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Stats Preview -->
+        <section class="stats-preview reveal">
+            <div class="container">
+                <div class="landing-section-header">
+                    <h2>Community Impact at a Glance</h2>
+                    <p>Live statistics powered by real citizen-reported data</p>
+                </div>
+                <div class="stats-preview__grid reveal-stagger" id="statsPreview">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Reports -->
+        <section class="recent-reports reveal">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Latest from the Community</h2>
+                    <a href="reports.html" class="section__link">
+                        See all issues <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="recent-reports__grid" id="recentReports">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Reporting Matters -->
+        <section class="why-report reveal">
+            <div class="container">
+                <div class="landing-section-header">
+                    <h2>Why Your Report Matters</h2>
+                    <p>One report can change an entire neighborhood</p>
+                </div>
+                <div class="why-report__grid reveal-stagger">
+                    <div class="why-card">
+                        <div class="why-card__icon stat-card__icon--accent">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="why-card__title">Make Problems Visible</h3>
+                        <p class="why-card__desc">Issues that go unreported stay invisible. Your report puts a spotlight on the problems authorities need to see and act on.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card__icon stat-card__icon--success">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3 class="why-card__title">Strength in Numbers</h3>
+                        <p class="why-card__desc">When 50 citizens confirm a broken road, it's no longer a complaint — it's a community-backed demand for action.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card__icon stat-card__icon--warning">
+                            <i class="fa-solid fa-chart-bar"></i>
+                        </div>
+                        <h3 class="why-card__title">Smarter Decisions</h3>
+                        <p class="why-card__desc">Your data reveals patterns, exposes neglected areas, and helps decision-makers allocate resources where they're needed most.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section reveal--scale">
+            <div class="container">
+                <div class="cta-box">
+                    <div class="cta-box__content">
+                        <h2 class="cta-box__title">Ready to Transform Your Street?</h2>
+                        <p class="cta-box__subtitle">
+                            Your one report could fix a dangerous pothole, restore a broken streetlight, 
+                            or clean up a neglected park. It starts with you.
+                        </p>
+                        <div class="cta-box__actions">
+                            <a href="report-new.html" class="btn btn--primary btn--lg">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                Report an Issue Now
+                            </a>
+                            <a href="dashboard.html" class="btn btn--secondary btn--lg" style="background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.2);">
+                                <i class="fa-solid fa-chart-line"></i>
+                                View Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/storageAdapter.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/seedData.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/landing.js"></script>
+    <script src="js/scrollReveal.js"></script>
+    <script>
+        // Initialize scroll animations after page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => ScrollReveal.init());
+        } else {
+            setTimeout(() => ScrollReveal.init(), 50);
+        }
+    </script>
+</body>
+</html>
+

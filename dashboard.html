@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CivicPulse Dashboard — View real-time community statistics, recent reports, and civic issue trends.">
+    <title>Dashboard — CivicPulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMTBiOTgxIiBkPSJNMjU2IDUxMkEyNTYgMjU2IDAgMSAwIDI1NiAwYTI1NiAyNTYgMCAxIDAgMCA1MTJ6bTAtMzgyVjI1NnY3Ni41YzAgOS44LTcuOSAxNy41LTE3LjUgMTcuNUMyMjguOCAzNTAgMjIwLjkgMzQyLjIgMjIwLjkgMzMyLjVWMTI5LjhjMC05LjggNy45LTE3LjUgMTcuNS0xNy41czE3LjUgNy43IDE3LjUgMTcuN1oiLz48L3N2Zz4=">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header id="navbar"></header>
+    <main class="main-content page-content">
+        <div class="container">
+            <div class="page-header">
+                <div class="page-header__row">
+                    <div>
+                        <h1 class="page-header__title">Dashboard</h1>
+                        <p class="page-header__subtitle">Real-time community civic data at a glance</p>
+                    </div>
+                    <div class="page-header__actions">
+                        <a href="report-new.html" class="btn btn--primary">
+                            <i class="fa-solid fa-circle-plus"></i> New Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primary Stats -->
+            <div class="dashboard-stats stagger-children" id="dashboardStats"></div>
+
+            <!-- Secondary Stats -->
+            <div class="dashboard-secondary-stats stagger-children" id="dashboardSecondaryStats"></div>
+
+            <!-- Content Grid -->
+            <div class="dashboard-content">
+                <!-- Recent Reports -->
+                <div class="dashboard-panel">
+                    <div class="dashboard-panel__header">
+                        <h2 class="dashboard-panel__title">
+                            <i class="fa-solid fa-clock-rotate-left" style="color: var(--text-tertiary);"></i>
+                            Recent Reports
+                        </h2>
+                        <a href="reports.html" class="section__link">
+                            View all <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="dashboard-report-list" id="dashboardRecentReports"></div>
+                </div>
+
+                <!-- Category Breakdown -->
+                <div class="dashboard-panel">
+                    <div class="dashboard-panel__header">
+                        <h2 class="dashboard-panel__title">
+                            <i class="fa-solid fa-chart-pie" style="color: var(--text-tertiary);"></i>
+                            Top Categories
+                        </h2>
+                        <a href="analytics.html" class="section__link">
+                            Analytics <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="category-breakdown" id="dashboardCategories"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/utils.js"></script>
+    <script src="js/storageAdapter.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/seedData.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+

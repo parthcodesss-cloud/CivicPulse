@@ -1,0 +1,192 @@
+/* ============================================
+   CivicPulse — Design Tokens
+   All CSS custom properties live here.
+   ============================================ */
+
+:root {
+    /* ── Brand Colors ── */
+    --color-primary: #0f172a;
+    --color-primary-light: #1e293b;
+    --color-primary-dark: #020617;
+    --color-accent: #10b981;
+    --color-accent-light: #34d399;
+    --color-accent-dark: #059669;
+    --color-accent-bg: rgba(16, 185, 129, 0.08);
+
+    /* ── Semantic Colors ── */
+    --color-success: #10b981;
+    --color-success-light: #34d399;
+    --color-success-bg: rgba(16, 185, 129, 0.08);
+    --color-warning: #f59e0b;
+    --color-warning-light: #fbbf24;
+    --color-warning-bg: rgba(245, 158, 11, 0.08);
+    --color-danger: #ef4444;
+    --color-danger-light: #f87171;
+    --color-danger-bg: rgba(239, 68, 68, 0.08);
+    --color-info: #06b6d4;
+    --color-info-light: #22d3ee;
+    --color-info-bg: rgba(6, 182, 212, 0.08);
+
+    /* ── Severity Colors ── */
+    --severity-low: #3b82f6;
+    --severity-low-bg: rgba(59, 130, 246, 0.1);
+    --severity-medium: #f59e0b;
+    --severity-medium-bg: rgba(245, 158, 11, 0.1);
+    --severity-high: #f97316;
+    --severity-high-bg: rgba(249, 115, 22, 0.1);
+    --severity-critical: #ef4444;
+    --severity-critical-bg: rgba(239, 68, 68, 0.1);
+
+    /* ── Status Colors ── */
+    --status-pending: #f59e0b;
+    --status-pending-bg: rgba(245, 158, 11, 0.1);
+    --status-verified: #06b6d4;
+    --status-verified-bg: rgba(6, 182, 212, 0.1);
+    --status-in-progress: #8b5cf6;
+    --status-in-progress-bg: rgba(139, 92, 246, 0.1);
+    --status-resolved: #10b981;
+    --status-resolved-bg: rgba(16, 185, 129, 0.1);
+    --status-rejected: #6b7280;
+    --status-rejected-bg: rgba(107, 114, 128, 0.1);
+
+    /* ── Light Theme (default) ── */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f5f9;
+    --bg-elevated: #ffffff;
+    --bg-hover: #f1f5f9;
+    --bg-active: #e2e8f0;
+    --bg-overlay: rgba(15, 20, 25, 0.6);
+    --bg-nav: rgba(255, 255, 255, 0.92);
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #94a3b8;
+    --text-inverse: #ffffff;
+    --text-accent: #10b981;
+    --text-on-accent: #ffffff;
+
+    --border-color: #e2e8f0;
+    --border-light: #f1f5f9;
+    --border-focus: #10b981;
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.08), 0 8px 10px rgba(0, 0, 0, 0.04);
+
+    /* ── Typography ── */
+    --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    --text-xs: 0.75rem;      /* 12px */
+    --text-sm: 0.8125rem;    /* 13px */
+    --text-base: 0.9375rem;  /* 15px */
+    --text-md: 1rem;         /* 16px */
+    --text-lg: 1.125rem;     /* 18px */
+    --text-xl: 1.25rem;      /* 20px */
+    --text-2xl: 1.5rem;      /* 24px */
+    --text-3xl: 1.875rem;    /* 30px */
+    --text-4xl: 2.25rem;     /* 36px */
+    --text-5xl: 3rem;        /* 48px */
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+
+    --leading-tight: 1.2;
+    --leading-snug: 1.35;
+    --leading-normal: 1.6;
+
+    /* ── Spacing ── */
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px */
+    --space-8: 2rem;      /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+    --space-16: 4rem;     /* 64px */
+    --space-20: 5rem;     /* 80px */
+    --space-24: 6rem;     /* 96px */
+
+    /* ── Layout ── */
+    --container-max: 1200px;
+    --container-narrow: 800px;
+    --container-wide: 1400px;
+    --nav-height: 64px;
+    --sidebar-width: 280px;
+
+    /* ── Borders ── */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+    --radius-full: 9999px;
+
+    /* ── Transitions ── */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 300ms ease;
+    --transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* ── Z-Index Scale ── */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-tooltip: 600;
+    --z-toast: 700;
+}
+
+/* ── Dark Theme ── */
+[data-theme="dark"] {
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+    --bg-tertiary: #1e293b;
+    --bg-elevated: #1e293b;
+    --bg-hover: #1e293b;
+    --bg-active: #334155;
+    --bg-overlay: rgba(0, 0, 0, 0.7);
+    --bg-nav: rgba(2, 6, 23, 0.92);
+
+    --text-primary: #e7e9ea;
+    --text-secondary: #8b98a5;
+    --text-tertiary: #5b6d80;
+    --text-inverse: #0f172a;
+    --text-accent: #34d399;
+
+    --border-color: #1e293b;
+    --border-light: #0f172a;
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.35), 0 8px 10px rgba(0, 0, 0, 0.15);
+
+    --color-accent-bg: rgba(16, 185, 129, 0.12);
+    --color-success-bg: rgba(16, 185, 129, 0.12);
+    --color-warning-bg: rgba(245, 158, 11, 0.12);
+    --color-danger-bg: rgba(239, 68, 68, 0.12);
+    --color-info-bg: rgba(6, 182, 212, 0.12);
+
+    --severity-low-bg: rgba(59, 130, 246, 0.15);
+    --severity-medium-bg: rgba(245, 158, 11, 0.15);
+    --severity-high-bg: rgba(249, 115, 22, 0.15);
+    --severity-critical-bg: rgba(239, 68, 68, 0.15);
+
+    --status-pending-bg: rgba(245, 158, 11, 0.15);
+    --status-verified-bg: rgba(6, 182, 212, 0.15);
+    --status-in-progress-bg: rgba(139, 92, 246, 0.15);
+    --status-resolved-bg: rgba(16, 185, 129, 0.15);
+    --status-rejected-bg: rgba(107, 114, 128, 0.15);
+}

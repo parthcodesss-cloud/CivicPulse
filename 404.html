@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found — CivicPulse">
+    <title>404 — Page Not Found — CivicPulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .error-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - var(--nav-height) - 200px);
+            text-align: center;
+            padding: var(--space-8);
+        }
+
+        .error-page__code {
+            font-family: var(--font-heading);
+            font-size: clamp(6rem, 15vw, 10rem);
+            font-weight: var(--weight-extrabold);
+            background: linear-gradient(135deg, var(--color-accent), var(--color-info));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: var(--space-4);
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.15); }
+        }
+
+        .error-page__title {
+            font-size: var(--text-3xl);
+            font-weight: var(--weight-bold);
+            margin-bottom: var(--space-3);
+        }
+
+        .error-page__message {
+            font-size: var(--text-md);
+            color: var(--text-secondary);
+            max-width: 440px;
+            margin: 0 auto var(--space-8);
+            line-height: var(--leading-normal);
+        }
+
+        .error-page__actions {
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .error-page__illustration {
+            font-size: 4rem;
+            margin-bottom: var(--space-6);
+            opacity: 0.3;
+        }
+    </style>
+
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMTBiOTgxIiBkPSJNMjU2IDUxMkEyNTYgMjU2IDAgMSAwIDI1NiAwYTI1NiAyNTYgMCAxIDAgMCA1MTJ6bTAtMzgyVjI1NnY3Ni41YzAgOS44LTcuOSAxNy41LTE3LjUgMTcuNUMyMjguOCAzNTAgMjIwLjkgMzQyLjIgMjIwLjkgMzMyLjVWMTI5LjhjMC05LjggNy45LTE3LjUgMTcuNS0xNy41czE3LjUgNy43IDE3LjUgMTcuN1oiLz48L3N2Zz4=">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header id="navbar"></header>
+    <main class="main-content">
+        <div class="container">
+            <div class="error-page">
+                <div class="error-page__illustration">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="error-page__code">404</div>
+                <h1 class="error-page__title">Page Not Found</h1>
+                <p class="error-page__message">
+                    The page you're looking for doesn't exist or may have been moved. 
+                    But don't worry — there are still plenty of civic issues to explore.
+                </p>
+                <div class="error-page__actions">
+                    <a href="index.html" class="btn btn--primary btn--lg">
+                        <i class="fa-solid fa-home"></i> Go Home
+                    </a>
+                    <a href="reports.html" class="btn btn--secondary btn--lg">
+                        <i class="fa-solid fa-list-check"></i> Browse Issues
+                    </a>
+                    <a href="report-new.html" class="btn btn--ghost btn--lg">
+                        <i class="fa-solid fa-circle-plus"></i> Report an Issue
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/utils.js"></script>
+    <script src="js/storageAdapter.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/seedData.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
